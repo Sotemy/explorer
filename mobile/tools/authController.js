@@ -14,6 +14,7 @@ const login = async (userData) => {
         return response
     }
 
+    console.log('Wrong creaditals')
     throw new Error('Wrong creaditals')
 }
 

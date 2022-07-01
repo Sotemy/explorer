@@ -1,10 +1,19 @@
-import { View, TextInput, Button, StyleSheet, KeyboardAvoidingView } from 'react-native'
-import React from 'react'
+import { 
+    View, 
+    Button, 
+    StyleSheet, 
+    KeyboardAvoidingView,
+    ScrollView,
+} from 'react-native'
+import { TextInput } from "@react-native-material/core";
+import { useState } from 'react'
+
+
 import login from '../tools/authController';
 
 export default function Login() {
 
-    const [data, setData] = React.useState(
+    const [data, setData] = useState(
         {
             email: '',
             password: '',
@@ -14,8 +23,9 @@ export default function Login() {
     const onChange = (key, e) => {
         setData((prevState) => ({
             ...prevState, 
-            [key]: e.nativeEvent.text,
+            [key]: e,
         }))
+        console.log(e)
     }
 
     const onSubmit = (e) => {
@@ -28,30 +38,30 @@ export default function Login() {
 
     return (
         <View>
-            <KeyboardAvoidingView behavior='padding'>
+            <ScrollView>
+        <KeyboardAvoidingView behavior='padding'>
             <TextInput
-                style = {styles.input}
-                returnKeyType='done'
-                onChange={(e) => onChange('email', e)}
+                style = { styles.input }
+                label="E-Mail"
+                value={data.email}
+                onChangeText = {(text) => onChange('email', text)}
             />
             
             <TextInput
-                style={styles.input}
-                onChange={(e) => onChange('password', e)}
-                placeholder="useless placeholder"
-                returnKeyType='done'
+                style = { styles.input }
+                label="Password"
+                value={data.password}
+                onChangeText={(text) => onChange('password', text)}
             />
-            </KeyboardAvoidingView>
-            <Button onPress={(e) => onSubmit(e)} title="Submit">Submit</Button>
+        </KeyboardAvoidingView>
+            <Button style={styles.input} onPress={(e) => onSubmit(e)} title="Submit">Submit</Button>
+            </ScrollView>
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     input: {
-      height: 40,
-      margin: 12,
-      borderWidth: 1,
+      margin: 6,
       padding: 10,
     },
   });

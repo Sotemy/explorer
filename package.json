@@ -1,0 +1,24 @@
+{
+  "name": "explorer",
+  "version": "1.0.0",
+  "description": "blocks explorer",
+  "proxy": "http://localhost:5000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon api/index.js",
+    "web": "npm start --prefix web",
+    "mobile": "npm run web --prefix mobile",
+    "dev_web": " concurrently \"npm run server\" \"npm run web\" ",
+    "dev_mobile": " concurrently \"npm run server\" \"npm run mobile\" ",
+    "dev_all": " concurrently \"npm run server\" \"npm run mobile\" \"npm run web\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "postgres": "^3.2.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
+}

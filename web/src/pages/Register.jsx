@@ -73,51 +73,54 @@ function Register() {
     <>
     <section className="heading">
         <h1>
-            <FaUser /> register
+            <FaUser /> Register
         </h1>
         <p>Please create an account</p>
     </section>
-    <section className="form">
-        <form onSubmit={onSubmit}>
-            <div className="form-group">
-                    <input type="text" 
-                    className='form-control' 
-                    id='username' 
-                    name='username' 
-                    value={username} 
-                    placeholder='Enter username' 
-                    onChange={onChange} />
-            </div>
-            <div className="form-group">
-                    <input type="email" 
-                    className='form-control' 
-                    id='email' 
-                    name='email' 
-                    value={email} 
-                    placeholder='Enter email' 
-                    onChange={onChange} />
-            </div>
-            <div className="form-group">
-                    <input type="password" 
-                    className='form-control' 
-                    id='password' 
-                    name='password' 
-                    value={password} 
-                    placeholder='Enter password' 
-                    onChange={onChange} />
-            </div>
-            <div className="form-group">
-                    <input type="password" 
-                    className='form-control' 
-                    id='password2' 
-                    name='password2' 
-                    value={password2} 
-                    placeholder='Enter password again' 
-                    onChange={onChange} />
-            </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-    </section></>
+    <div className="container">
+        <section className="form">
+            <form onSubmit={onSubmit}>
+                <div className="form-group">
+                        <input type="text" 
+                        className='form-control' 
+                        id='username' 
+                        name='username' 
+                        value={username} 
+                        placeholder='Enter username' 
+                        onChange={onChange} />
+                </div>
+                <div className="form-group">
+                        <input type="email" 
+                        className='form-control' 
+                        id='email' 
+                        name='email' 
+                        value={email} 
+                        placeholder='Enter email' 
+                        onChange={onChange} />
+                </div>
+                <div className="form-group">
+                        <input type="password" 
+                        className='form-control' 
+                        id='password' 
+                        name='password' 
+                        value={password} 
+                        placeholder='Enter password' 
+                        onChange={onChange} />
+                </div>
+                <div className="form-group">
+                        <input type="password" 
+                        className='form-control' 
+                        id='password2' 
+                        name='password2' 
+                        value={password2} 
+                        placeholder='Enter password again' 
+                        onChange={onChange} />
+                </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+    </>
   )
 }
 
